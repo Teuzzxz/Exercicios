@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="tudo">
+
+        <h1>Calculadora</h1>
+
+        <div id="botoes">
+            <input type="number" id="text1" class="numeros"> 
+            <input type="number" id="text2" class="numeros">
+            <input type="button" value="Calcular" onclick="clicar()" >
+        </div>
+
+        <div id="resultado"></div>
+
+    </div>
+
+    <script>
+        function clicar() {
+            var text1 = window.document.getElementById('text1')
+            var text2 = window.document.getElementById('text2')
+            var n1 = Number(text1.value)
+            var n2 = Number(text2.value)
+            var soma = n1 + n2 
+            var res = window.document.getElementById('resultado')
+
+                res.innerHTML = `O seu resultado é: <p>${soma}</p>`
+                
+        }
+        
+    </script>
+
+    <input type="number" id="agoravaida">
+
+</body>
+</html>

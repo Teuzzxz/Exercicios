@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(126, 168, 216);
+            font: normal 1.3em arial;
+        }
+        header {
+            margin: 50px 0px;
+            text-align: center;
+            color: white;
+        }
+        #tudos {
+            width: 500px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.568);
+        }
+        input , p{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="h11">Área de testes</h1>
+    </header>
+
+    <div id="tudos">
+        <p>início:</p>
+        <input type="number" id="a1">
+        <br>
+        <p>FIm:</p>
+        <input type="number" id="fim">
+        <br>
+        <p>Passos:</p>
+        <input type="number" id="pas">
+        <br>
+        <input type="button" value="contar" onclick="contar()">
+        <input type="button" value="Zerar" onclick="zerar()">
+        <br>
+        <p id="contando"></p>
+    </div>
+    <script>
+        function contar() {
+            var inicio = Number(document.getElementById('a1').value)
+            var fim = Number(document.getElementById('fim').value)
+            var passos = Number(document.getElementById('pas').value)
+
+            
+
+            if (inicio == 0 || passos == 0 || fim == 0){
+                alert('faltam informações')
+            } else if (inicio < fim) {
+
+                while (inicio < fim) {
+                    document.getElementById('contando').innerHTML +=  + inicio 
+                    inicio += passos
+                }
+            } else if (inicio > fim) {
+                document.getElementById('contando').innerHTML +=  + inicio 
+                    inicio - passos
+            }
+            
+        }
+        function zerar() {
+            document.getElementById('contando').innerHTML = ''
+        }
+    </script>
+</body>
+</html>

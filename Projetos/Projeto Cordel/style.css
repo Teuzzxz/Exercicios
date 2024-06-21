@@ -1,0 +1,93 @@
+@font-face {
+    font-family: ftitulo ; 
+    src: url(PassionOne-Bold.ttf);
+}
+
+@font-face {
+    font-family: fresto ;
+    src: url(Sriracha-Regular.ttf);
+}
+* {
+    margin: 0px;
+}
+p {
+    font-family: fresto;
+}
+
+a {
+    font-family: fresto;
+    text-decoration: none;
+    color: white;
+}
+.cab {
+    background-color: black;
+}
+.cab > h1 {
+    font-family: 'ftitulo', Times, serif ;
+    font-size: 10vw;
+    padding-top:50px ;
+    text-align: center;
+    color: white;
+}
+.cab > p {
+    
+    padding-bottom: 50px;
+    text-align: center;
+    color: white;
+}
+
+.dev {
+
+}
+
+.dev > p {
+    line-height: 2em;
+    font-size: 3vw;
+    padding: 10vh ;
+    padding-left: 5vw;
+}
+
+.joa {
+    padding: 50px 50px 50px 30px;
+    background-image: url(pacote-d012/imagens/background001.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right center;
+
+}
+
+.p1 {
+    line-height: 2em;
+    font-size: 3vw;
+    display: flex;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.459);
+    width: 35vw;
+    padding: 10px;
+}
+
+.livro {
+    padding: 50px 50px 50px 30px;
+    background-image: url(pacote-d012/imagens/background002.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right center;
+}
+
+.final {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: black;
+}
+
+.final > p {
+    color: white;
+}
+
+p > a:hover {
+
+    text-decoration: underline;
+}

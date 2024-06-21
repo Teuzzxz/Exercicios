@@ -1,0 +1,23 @@
+body {
+    background-image:linear-gradient(to right, rgb(0, 0, 0), rgb(68, 141, 160) );
+
+}
+main {
+    background-color: white;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+    position: relative;
+    top: 200px;
+    padding: 10px;
+}
+h1 {
+    text-align: center;
+    color: rgb(58, 145, 145);
+}
+
+button {
+    background-color: red;
+    
+}

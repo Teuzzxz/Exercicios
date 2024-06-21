@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(67, 113, 182);
+        }
+        input {
+            background-color: grey;
+        }
+        div {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+    <input type="number" name="text01">
+    <input type="text" name="text02">
+    <input type="button" value="Calcular" id="valor" onclick="clicar()">
+
+    <div id="resu">Resultado</div>
+
+    <script>
+
+        var n1 = parseFloat(window.document.getElementsByName('text02'))
+        var n2 = parseFloat(window.document.getElementsByName('text01'))
+
+        function clicar() {
+
+            var text2 = window.document.querySelector('input#text01')
+            var text1 = window.document.querySelector('input#text02')
+            var resultado = n1 + n2
+            var cdr = window.document.querySelector('div#resu')
+            alert(resultado)
+        }
+        
+
+
+    </script>
+
+</body>
+</html>

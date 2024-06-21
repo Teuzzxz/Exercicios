@@ -1,0 +1,128 @@
+@keyframes Caindo1 {
+    0% {
+        opacity: 100%;
+        transform: translateY(0%);
+        transform: scale(1);
+        
+    }
+    65% {
+        opacity: 100%;
+        transform: translateY(0%);
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0%;
+        transform: translateY(400px) scale(0.2);
+    }
+    
+}
+@keyframes entrada {
+    from {
+        transform: translatex(-100%);
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+        transform: translatex(0px);
+    }
+}
+
+:root {
+    
+    --cor1: #F2D1B3;
+    --cor2: #D9B5A0;
+    --cor3: #BF8563;
+    --cor4: #8C4126;
+    --cor5: #734E40;
+}
+body {
+    font: normal 16pt arial;
+    background-color: var(--cor5);
+}
+* {
+    margin: 0px;
+}
+#meiotela {
+    background-color: rgba(128, 128, 128, 0.288);
+    width: 100%;
+    height: 100vh;
+
+}
+#cabecalho {
+    display: flex;
+    width: 100%;
+    height: 190px;
+    background-image: url(Mídia/Imagens/cabecalho.png);
+    background-size: 1200px;
+    background-repeat: repeat-x;
+    justify-content: space-between;
+    align-items: center;
+}
+#titulo{
+    position:absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color:var(--cor2);
+    font-size: 2em;
+}
+.bolinha {
+    background-color: black;
+    
+    width: 50px;
+    height: 50px;
+    display: flex;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.733);
+}
+#b1 {
+   
+    animation: Caindo1 10s 5s infinite backwards;
+}
+#b2 { 
+    animation: Caindo1 10s 6s infinite backwards;
+}
+#b3 {
+    animation: Caindo1 10s 2s infinite backwards;
+}
+#b4 {
+    animation: Caindo1 10s 8s infinite backwards;
+}
+#b5 {
+    animation: Caindo1 10s infinite backwards;
+}
+#b6 {
+    animation: Caindo1 10s 4s infinite backwards;
+}
+#restomt {
+    height: calc(100% - 190px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#conteudo {
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+    background-color: var(--cor1);
+    flex-direction: row;
+}
+.lado1 {
+    
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.lado2 {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+}
+p {
+    animation: entrada 2s infinite;
+    margin: 50px 0px;
+    border: 1px solid black;
+}

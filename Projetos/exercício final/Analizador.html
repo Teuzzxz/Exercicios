@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(69, 107, 150);
+            font: normal 16pt arial;
+        }
+        header {
+            margin: 50px 0px;
+            text-align: center;
+        }
+        #tudos {
+            width: 500px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        * {
+            margin: 5px;
+        }
+        select {
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ids:
+
+        num : input numero
+        sel : select
+        testes : Paragráfo de testes
+
+        funções:
+
+        add : primeiro botao
+    -->
+    <header>
+        <h1>Analizador de números</h1>
+    </header>
+
+    <div id="tudos">
+        <p>Número (entre 1 e 100): 
+            <input type="number" id="num" onclick="zerar()"> 
+            <input type="button" value="Adicionar" onclick="add()">
+        </p>
+
+        <select id="sel" size="8">
+        </select>
+        <br>
+        <input type="button" value="FInalizar" onclick="final()">
+
+        <div id="res">
+            <p class="an"></p>
+            <p class="an"></p>
+            <p class="an"></p>
+            <p class="an"></p>
+            <p class="an"></p>
+        </div>
+    </div>
+
+    <script> 
+        let num = document.querySelector('input#num')
+        let lista = document.querySelector('select#sel')
+        let res = document.querySelector('div#res')
+        let valores = []
+        let resultado = document.getElementsByClassName('an')
+
+        function isNumero(n) {
+
+            if (Number(n) >= 1 && Number(n) <=100){
+                return true
+            } else {
+                return false
+            }
+        }
+
+        function inLista(n, l){
+            if (l.indexOf(Number(n)) != -1){
+                return true
+            } else {
+                return false
+            }
+        } 
+
+        function add() {
+            if(isNumero(num.value) && !inLista(num.value , valores)){
+                valores.push(Number(num.value))
+                let addlista = document.createElement('option')
+                addlista.textContent = `Valor ${Number(num.value)} Adicionado`
+                lista.appendChild(addlista)
+            } else {
+                alert('valor inválido, ou ja adicionado na lista')
+            }
+            num.value = ''
+        }
+
+        function final(){
+            if (valores.length == 0) {
+                alert('Adicione valores antes de finalizar')
+            } else {
+                let soma = 0
+                for (var i = 0; i < valores.length; i++) {
+                soma += valores[i];
+                }
+                resultado[0].textContent = `Ao todo, temos ${valores.length} números cadastrados`
+                resultado[1].textContent = `O maior valor informado foi ${Math.max(...valores)}`
+                resultado[2].textContent = `O menor valor informado foi ${Math.min(...valores)}`
+                resultado[3].textContent = `Somando todos os valores,temos ${soma}`
+                resultado[4].textContent = `A média dos valores digitados é ${soma / valores.length}`
+                lista = ''
+            } 
+        }
+        function zerar(){
+            resultado[0].textContent = ''
+            resultado[1].textContent = ''
+            resultado[2].textContent = ''
+            resultado[3].textContent = ''
+            resultado[4].textContent = ''
+        }
+        
+    </script>
+</body>
+</html>

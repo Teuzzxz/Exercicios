@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pseudo-classes</title>
+    <style>
+        body {
+            background-color: rgb(32, 31, 31);
+        }
+        div {
+            display: inline-block;
+            background-color: lightgray;
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    div:hover {
+        color: red;
+        background-color: aqua;
+    }        
+    h1 {
+    font-size: 2em;
+    }
+
+    div > .testee {
+        display: none;
+    }
+    div:hover > .testee{
+        display: block;
+        background-color: blue;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div id="testando"><h1>1</h1></div>
+    <div><h1>2</h1></div>
+    <div><h1>3</h1></div>
+    <div >
+        <h1> testando o bgl dos filhos </h1>
+        <p class="testee"> aparece ai agora</p>
+
+    </div>
+    <p>testando</p>
+</body>
+</html>

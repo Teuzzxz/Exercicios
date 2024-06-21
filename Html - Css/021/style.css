@@ -1,0 +1,41 @@
+body {
+    background-color: grey;
+    ackground-image: url(wallpaper001.jpg);
+
+}
+
+.caixas {
+    display: inline-block;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+#q1 {
+    background-image: url(pattern001.png);
+}
+#q2 {
+    background-image: linear-gradient(to bottom, yellow, red)
+}
+#q3 {
+    background-image: url(pattern002.png);
+    background-repeat: no-repeat;
+}
+
+.cnt {
+    margin: 20px auto 0px auto;
+    width: 1000px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-image: url(wallpaper002.jpg);
+}
+ 
+#cnt1 {
+    background-position: center top;
+}
+
+#cnt2 {
+    background-position: bottom left;
+}

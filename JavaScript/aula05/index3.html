@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(74, 129, 129);
+            font: normal 2em arial;
+        }
+        #container {
+            width: 300px;
+            height: 300px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container" >Interaja...</div>
+    <script>
+        var certo = window.document.querySelector('div#container')
+        certo.addEventListener('click' , clicar)
+        certo.addEventListener('mouseenter', entrou)
+        certo.addEventListener('mouseout', saiu)
+
+        function clicar() {
+            certo.innerHTML = 'Voce clicou'
+            certo.style.background = 'black'
+            certo.style.color = 'white'
+        }
+
+        function entrou() {
+            certo.innerHTML = 'Você deu o cuzinho'
+        }
+        
+        function saiu() {
+            certo.innerHTML = 'Você saiu'
+            certo.style.background = 'green'
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Verificador de idade</h1>
+    
+    
+    <div id="dev">
+        
+        <p class="pad il ">Ano de nascimento:</p>
+
+        <input type="number"  id="Pidade">
+
+        <br>
+
+        <p id="N" class="il pad">Sexo:</p>
+
+        <input type="radio" name= "sexos" id="sexom" checked>
+        <label for="sexom">Masculino</label>
+        <input type="radio" name= "sexos" id="sexon" >
+        <label for="sexon">Feminino</label>
+        
+        <br>
+
+        <input type="button" onclick="cliquemouse()" value="calcular">
+        
+        <input type="button" value="voltar" id="voltar" onclick="cliquemouse2()">
+
+        <p class="pad" id="textin">Preencha os campos acima para ver o resultado!</p>
+
+        <img src="#" id="imag">
+    </div>
+        <script>
+            function cliquemouse() {
+
+                var a = new Date()
+                var anonas = a.getFullYear()
+                var texto = window.document.getElementById('Pidade')
+                var n1 = Number(texto.value)
+                var imagem = document.getElementById('imag')
+                var paragrafo = document.getElementById('textin')
+                var soma = anonas - n1
+                var sex = document.getElementsByName('sexos')
+                var um = 'um'
+
+                    if (sex[0].checked){
+                        sex = 'homem'
+                    } else if (sex[1].checked){
+                        sex = 'mulher'
+                        um = 'uma'
+                    }
+
+                    if (soma < 0) {
+                        imagem.src = 'esperma.png'
+                        paragrafo.textContent = `Voce:`
+                    } else if (soma <=10 && sex == 'homem'){
+                        paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                        imagem.src = 'crianca.png'
+                    } else if (soma <=10 && sex == 'mulher'){
+                    paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                    imagem.src = 'criancam.png'
+                    } else if (soma <= 50 && sex == 'homem') {
+                        paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                        imagem.src = 'adulto.png'
+                    } else if (soma <= 50 && sex == 'mulher') {
+                        paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                        imagem.src = 'adultam.png'
+                    } else if (soma <= 120 && sex == 'homem'){
+                        paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                        imagem.src = 'velho.png'
+                    } else if (soma <= 120 && sex == 'mulher'){
+                        paragrafo.textContent = `Voce é ${um} ${sex} de ${soma} anos`
+                        imagem.src = 'velham.png'
+                    } else {
+                        imagem.src = 'tiopaulo.png'
+                        paragrafo.textContent = `Voce:`
+                    }
+            }
+        </script>
+        <script>
+            function cliquemouse2() {
+                var imagem = document.getElementById('imag')
+                var paragrafo = document.getElementById('textin')
+                imagem.src = '#'
+                paragrafo.textContent = 'Preencha os campos acima para ver o resultado!'
+
+            }
+        </script>
+
+</body>
+</html>

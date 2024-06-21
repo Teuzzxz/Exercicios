@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(69, 107, 150);
+        }
+        header {
+            margin: 50px 0px;
+            text-align: center;
+        }
+        #tudos {
+            width: 500px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        input , p{
+            display: inline-block;
+        }
+        select {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Área de testes</h1>
+    </header>
+
+    <div id="tudos">
+        <p>Número:</p>
+        <input type="number" id="numero">
+        <input type="button" value="Gerar Tabuada" onclick="clicar()">
+        <br>
+        <select name="" id="">
+            <option value="" id="sec1"></option>
+            <option value="" id="sec2"></option>
+            <option value="" id="sec3"></option>
+            <option value="" id="sec4"></option>
+            <option value="" id="sec5"></option>
+            <option value="" id="sec6"></option>
+            <option value="" id="sec7"></option>
+            <option value="" id="sec8"></option>
+            <option value="" id="sec9"></option>
+            <option value="" id="sec10"></option>
+        </select>
+        <div id="teste"></div>
+    </div>
+    
+    <script>
+        function clicar() {
+            if (num == 0) {
+                alert('coloque um valor válido')
+            } else {
+            var num = Number(document.getElementById('numero').value)
+            document.getElementById('sec1').innerHTML = `${num} X 1 = ${num * 1}` 
+            document.getElementById('sec2').innerHTML = `${num} X 2 = ${num * 2}`
+            document.getElementById('sec3').innerHTML = `${num} X 3 = ${num * 3}`
+            document.getElementById('sec4').innerHTML = `${num} X 4 = ${num * 4}`
+            document.getElementById('sec5').innerHTML = `${num} X 5 = ${num * 5}`
+            document.getElementById('sec6').innerHTML = `${num} X 6 = ${num * 6}`
+            document.getElementById('sec7').innerHTML = `${num} X 7 = ${num * 7}`
+            document.getElementById('sec8').innerHTML = `${num} X 8 = ${num * 8}`
+            document.getElementById('sec9').innerHTML = `${num} X 9 = ${num * 9}`
+            document.getElementById('sec10').innerHTML = `${num} X 10 = ${num * 10}`
+            }
+            
+        }
+        
+        
+    </script>
+</body>
+</html>

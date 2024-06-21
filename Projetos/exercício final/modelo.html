@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(69, 107, 150);
+            font: normal 16pt arial;
+        }
+        header {
+            margin: 50px 0px;
+            text-align: center;
+        }
+        #tudos {
+            width: 500px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        * {
+            margin: 5px;
+        }
+        select {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ids:
+
+        num : input numero
+        sel : select
+        testes : Paragráfo de testes
+
+        funções:
+
+        add : primeiro botao
+    -->
+    <header>
+        <h1>Analizador de números</h1>
+    </header>
+
+    <div id="tudos">
+        <p>Número (entre 1 e 100): 
+            <input type="number" id="num"> 
+            <input type="button" value="Adicionar" onclick="add()">
+        </p>
+
+        <select id="sel" size="8">
+        </select>
+        <br>
+        <input type="button" value="FInalizar" onclick="final()">
+        <p class="ids"></p>
+        <p class="ids"></p>
+        <p class="ids"></p>
+        <p class="ids"></p>
+        <p class="ids"></p>
+    </div>
+
+    <script>
+        function add() {
+            
+            let num = Number(document.getElementById('num').value) // Var do input/
+            let seção = document.getElementById('sel') // Var da seleção
+
+            if (num >= 1 && num <= 100 && String(num).length != 0) {
+                let textP = document.createElement('option')
+                textP.className = 'opcoes'
+                textP.textContent = `Valor ${num} Adicionado.` 
+                seção.appendChild(textP)
+                
+            
+            } else {
+                alert('Falta de informações, ou informações erradas')
+            }
+            
+        }
+        function final() {
+            var opções = document.getElementsByClassName('opcoes')[0].innerHTML
+            
+            if (opções  != null) {
+                document.getElementsByClassName('ids')[0].innerHTML = 1
+                document.getElementsByClassName('ids')[1].innerHTML = 2
+                document.getElementsByClassName('ids')[2].innerHTML = 3
+                document.getElementsByClassName('ids')[3].innerHTML = 4
+                document.getElementsByClassName('ids')[4].innerHTML = 5
+            } else {
+                alert('não há números')
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>
