@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" class="usu">
+    <br>
+    <input type="text" class="senha">
+    <input type="button" value="Entrar" id="botao">
+    <script>
+        let armzU = ['t1' ,'t2' ,'t3', 't4' ,'t5', 't6' ,'t7' ,'t8' ,'t9' ,'t10', 'Mateuz']
+        let armzS = ['s1' ,'s2' ,'s3', 's4' ,'s5', 's6' ,'s7' ,'s8' ,'s9' ,'s10', 'Senha']
+        const usuario = document.getElementsByClassName('usu')[0]
+        const senha = document.getElementsByClassName('senha')[0]
+        
+        
+        const btn = document.getElementById('botao')
+
+        btn.addEventListener('click', ()=> {
+            let une = true
+            
+            armzU.map((v,p)=>{
+                
+                if (v == usuario.value){
+                    let tsenha = p
+                    une = false
+                    if(armzS[tsenha] == senha.value){
+                        alert('logado com sucesso')
+                    }else {
+                        une = true
+                    }
+                } 
+            } )
+
+            if (une){
+                alert('Usuário ou senha incorretos')
+                une = false
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+        .all {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid black;
+            transform: translate(-50% , -50%);
+            width: 600px;
+            height: 400px;
+            display: flex;
+        }
+        .div1 {
+            width: 50%; 
+        }
+        .div2 {
+            width: 50%;
+        }
+        .nolugar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .Nomes {
+            padding: 6px;
+            border: 1px solid black;
+            width: 200px;
+            text-align: center;
+            margin: 5px;
+            border-radius: 10px;
+            background-color: rgb(58, 58, 58);
+            color: rgba(255, 255, 255, 0.678);
+            box-shadow: 0px 0px 10px  rgba(0, 0, 0, 0.445);
+        }
+        input {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50% , -50%);
+            width: 70px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: grey;
+            color: white
+        }
+        input:hover {
+            transition: 0.5s;
+            transform:scale(1.05) translate(-50% , -50%);
+        }
+        .mudou {
+            background-color: rgb(223, 36, 36);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="div1 nolugar">
+            <div class="Nomes" >HTML</div>
+            <div class="Nomes" >JavaScrip</div>
+            <div class="Nomes" >Css</div>
+            <div class="Nomes" >React</div>
+            <div class="Nomes" >Json</div>
+            <div class="Nomes" >Wordpress</div>
+        </div>
+
+        <input type="button" value="Copiar" id="btn">
+
+        <div class="div2 nolugar">
+            
+        </div>
+    </div>
+    <script>
+        const div1 = document.getElementsByClassName('div1')[0]
+        const div2 = document.getElementsByClassName('div2')[0]
+        const botao = document.getElementById('btn')
+        
+        const ele = [...document.getElementsByClassName('Nomes')]
+        
+        ele.map((el)=>{
+            el.addEventListener('click', ()=>{
+                el.classList.toggle('mudou')
+        })})
+
+        botao.addEventListener('click' , ()=>{
+            ele.map((v,p)=>{
+            if (v.className == 'Nomes mudou'){
+                console.log(`A Caixa ${p + 1 } está com a classe`)
+                div2.appendChild(v)
+                v.classList.add('ot')
+            } else if (v.className == 'Nomes ot'){
+                div1.appendChild(v)
+                v.classList.remove('ot')
+            }
+        })
+        })
+        
+        
+    </script>
+</body>
+</html>
