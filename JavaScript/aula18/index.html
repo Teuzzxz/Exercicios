@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: grey;
+            color: white;
+        }
+        .tudo {
+            width: 800px;
+            height: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+
+        }
+        .igual {
+            height: 100%;
+            width: 45%;
+            background-color: rgb(75, 71, 65);
+            border: 5px solid rgb(53, 50, 50);
+        }
+        #c1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #c2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ata {
+            margin: 5px 0px 5px 0px;
+            width: 150px;
+            height: 30px;
+        }
+        p {
+            margin-bottom: 2px;
+        }
+
+        .divsiguais {
+            width: 250px;
+            height: 40px;
+            border-radius: 20px;
+            background-color: grey;
+            margin-top: 10px;
+            border: 3px solid rgb(212, 212, 212);
+            display: flex;
+        }
+        .t1{ 
+            width: 50%;
+            border-radius: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .t2 {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        .Marcada {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="tudo">
+
+        <div class="igual" style="margin-right: 80px;" id="c1">
+            <p>Nome do curso</p>
+            <input type="text">
+            <input type="button" value="Adicionar" class="ata">
+            <input type="button" value="Remover Selecionado" class="ata" id="RemoverSelecionado">           
+            <input type="button" value="Curso Selecionado" class="ata" id="CursoSelecionado">
+        </div>
+
+        <div class="igual" id="c2">
+            <div class="divsiguais">
+                <div class="t1">HTML</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                </div>
+            </div>
+
+            <div class="divsiguais">
+                <div class="t1">CSS</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                </div>
+            </div>
+
+            <div class="divsiguais">
+                <div class="t1">JavaScript</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                </div>
+            </div>
+
+            <div class="divsiguais">
+                <div class="t1">PHP</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                </div>
+            </div>
+
+            <div class="divsiguais">
+                <div class="t1">React</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                </div>
+            </div>
+
+            <div class="divsiguais">
+                <div class="t1">MySQL</div>
+                <div class="t2">
+                    <input type="radio" name="radioBB" id="">
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        const RemoverSelecionado = document.getElementById('RemoverSelecionado')
+        const CursoSelecionado = document.getElementById('CursoSelecionado')
+        const divs = [...document.getElementsByName('radioBB')]
+        const caixas = [...document.getElementsByClassName('divsiguais')]
+
+        divs.map((v,i)=>{
+            v.addEventListener('click' , ()=>{
+                v.checked = true
+            })
+        })
+
+        CursoSelecionado.addEventListener('click' , ()=>{
+            divs.filter((v,p)=>{
+                if(v.checked){
+                    let emVar = v.parentNode.parentNode.childNodes[1].innerHTML
+                    alert(`O curso selecionado é o ${emVar}`)
+                    console.log(emVar)
+                }
+                
+            })
+        })
+        
+        RemoverSelecionado.addEventListener('click' , ()=>{
+            divs.filter((v,p)=>{
+                if(v.checked){
+                    let emVar = v.parentNode.parentNode
+                    emVar.remove()
+                    console.log(emVar)
+                }
+                
+            })
+        })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // divs.map((v,p)=>{
+        //     v.addEventListener('click', ()=>{
+        //         caixas[p].classList.add('Marcada')
+        //         let marcadas = [...document.getElementsByClassName('Marcada')] 
+        //         console.log(marcadas)
+                
+        //         marcadas.map((v,p)=>{
+        //             if(divs[p].checked==false){
+        //                 caixas[p].classList.remove('Marcada')
+        //             } 
+        //         })
+                
+        //     })
+            
+        // })
+        
+    </script>
+</body>
+</html>
