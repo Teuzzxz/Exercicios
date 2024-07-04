@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(201, 201, 201);
+        }
+    </style>
+</head>
+<body>
+    <input type="number"> Número 1
+<br>
+<br>
+    <input type="number"> Número 2
+<br>
+    <p></p>
+
+    <input type="button" value="+" class="Botoes">
+    <input type="button" value="-" class="Botoes">
+    <input type="button" value="/" class="Botoes">
+    <input type="button" value="*" class="Botoes">
+<br><br>
+    <script>
+        const num1 = document.getElementsByTagName('input')[0]
+        const num2 = document.getElementsByTagName('input')[1]
+        const resInput = document.getElementsByTagName('p')[0]
+        // const mais = document.getElementsByClassName('Botoes')[0]
+        // const menos = document.getElementsByClassName('Botoes')[1]
+        // const divisao = document.getElementsByClassName('Botoes')[2]
+        // const multplicação = document.getElementsByClassName('Botoes')[3]
+        const operaçoes = [...document.getElementsByClassName('Botoes')]
+        const ope = [
+            (v1,v2)=>{
+                resInput.innerHTML = v1 + v2
+            }
+            ,
+            (v1,v2)=>{
+                resInput.innerHTML = v1 - v2
+            }
+            ,
+            (v1,v2)=>{
+                resInput.innerHTML = v1 / v2
+            }
+            ,
+            (v1,v2)=>{
+                resInput.innerHTML = v1 * v2
+            }
+        ]
+        operaçoes.map((v,p)=>{
+            operaçoes[p].addEventListener('click' , ()=>{
+                ope[p](Number(num1.value),Number(num2.value))
+            })
+        })
+    </script>
+</body>
+</html>
+
+
