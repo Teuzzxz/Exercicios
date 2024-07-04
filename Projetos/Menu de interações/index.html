@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes aparecer {
+            from {
+                position: fixed;
+                top: 0%;
+                left: -150px;
+                opacity: 10%;
+            }
+            to {
+                position: fixed;
+                top: 0%;
+                left: 0px;
+            }
+        }
+
+        body {
+            background-color: grey;
+            font: normal 1.3em arial;
+        }
+        * {
+            margin: 0px;
+        }
+        h1 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        header {
+            border: 1px solid black;
+            display: flex;
+        }
+        img {
+            height: 32px;
+            width: 32px;
+        }
+        #menu {
+            animation: aparecer 1s backwards;
+            border-radius: 20px;
+            height: 400px;
+            width: 500px;
+            background-color: brown;
+            position: fixed;
+            top: 0%;
+        }
+        .Remover {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Menu_icon_icon-icons.com_71858.png">
+        <h1>Menuzinho</h1>
+    </header>
+            <div >
+                <img src="Menu_icon_icon-icons.com_71858.png" class="Remover">
+                <h1 class="Remover">testando menu</h1>
+                <p class="Remover">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt iste vel quas nemo blanditiis quo corporis. Exercitationem quia dicta quos non quidem aperiam, rerum deleniti ipsa quibusdam rem alias itaque?</p>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis voluptas quidem nihil, voluptatibus saepe mollitia ullam qui minima cumque quasi harum nobis. Doloremque laudantium necessitatibus architecto sunt nemo vel unde!</p>
+            <p>Reiciendis repudiandae eveniet omnis at, maiores, et ullam, dolore ipsam assumenda non inventore quasi nisi voluptatem cumque reprehenderit? Veniam eaque maiores similique, temporibus quidem quas nesciunt maxime mollitia dolores laudantium.</p>
+            <p>Illum sunt deleniti similique deserunt tempora ab nihil voluptatem culpa, delectus sit odit accusantium natus minus corrupti. Fuga unde nostrum vitae esse repudiandae deleniti, reiciendis aliquam labore ipsa optio officia.</p>
+            <p>Similique rerum quo impedit, magni unde quisquam facere sequi, sed possimus quam adipisci quos voluptatem nemo aspernatur qui optio dolorum corrupti! Voluptas odio similique in necessitatibus natus repudiandae, hic officiis.</p>
+            <p>Veniam dolorum dolorem consequatur eaque reprehenderit quae esse vel exercitationem doloribus, fuga unde similique a nihil quisquam beatae molestias laboriosam obcaecati fugiat voluptates ipsa illum adipisci iste accusamus? Vero, labore?</p>
+    <script>
+        const imgs = [...document.getElementsByTagName('img')]
+        const menu = document.getElementsByTagName('div')[0]
+        let remover = [...document.getElementsByClassName('Remover')]
+        var contador = 0
+        imgs.map((v)=>{
+            v.addEventListener('click' ,()=>{
+                
+                if(contador%2==0){
+                    menu.id = 'menu'
+                    remover.map((v,p)=>{
+                        remover[p].style.display= 'block'
+                    })  
+                    contador++           
+                }else if (contador%2!=0){
+                    menu.id = ''
+                    remover.map((v,p)=>{
+                        remover[p].style.display= 'none'
+                    })
+                    contador++
+                }
+        })
+        })
+    </script>
+</body>
+</html>
