@@ -4,6 +4,8 @@ let cont = 0
 const lista = document.getElementsByTagName('ul')[0]
 const vallista = [...document.getElementsByTagName('li')]
 let Capeta = [...document.getElementsByClassName('liaparece')]
+let tela = screen.width
+console.log(tela)
 btn.addEventListener('click' , ()=>{
     linhas.map((val,posi)=>{
         val.classList.toggle(`roda${posi + 1}`)})
