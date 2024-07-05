@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 900px) {
+            .ata{
+                background-color: black;
+                position: absolute;
+                top: 50px;
+                height:calc(100vh - 50px);
+                width: 300px;
+                transform: translateX(100%);
+            }
+            .ata > a{
+                margin: 0px;
+            }
+            .nepossivel {
+            display: block !important;
+            margin-right: 10px;
+            }
+            .dosA{
+                display: flex;
+                justify-content: right !important;
+            }
+        }
+        
+        
+        * {
+            margin: 0;
+        }
+        body {
+            /* overflow: hidden; */
+            background-color: grey;
+        }
+        #tudo {
+            height: 50px;
+            width: 100vw;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .divido {
+            flex: 33%;
+        }
+        h1 , p{
+            text-align: center;
+        }
+        a {
+            
+            margin-right: 20px;
+            display: inline-block;
+        }
+        .dosA {
+            text-align: right;
+        }
+        .linha {
+            height: 4px;
+            width: 23px;
+            background-color: black;
+            margin-top: 3px;
+        }
+        .nepossivel {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="tudo">
+        <p class="divido">nada</p>
+        <h1 class="divido">Doidera</h1>
+        <div class="divido dosA">
+            <div class="ata">
+                <a href="">Ajuda</a>
+                <a href="">interação</a>
+                <a href="">Entrar</a>
+                <a href="">Login</a>
+            </div>
+
+            <div class="nepossivel">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+@media screen and (max-width: 1050px){
+    ul{
+      height: 300px;
+      background-color: grey;  
+    }
+}
+@font-face {
+    font-family: Font;
+    src: url(mídias/lemon_milk/LEMONMILK-Light.otf);
+}
+body {
+    color: white;
+    font: normal 0.8em Font;
+    text-align: center;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    height: 7vh;
+    width: 100vw;
+    background-color: rgb(41, 0, 41);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main {
+    background: url(mídias/colin-horn-fR9U2S31Exs-unsplash.jpg) no-repeat center center;
+    height: 93vh;
+    background-size: cover;
+    width: 100vw;
+}
+li {
+    display: inline;
+    margin-right: 2vw;
+    
+}
+ul{
+    text-align: right;
+}
+
+.Posi-flex{
+    flex: 33%;
+}
+
+img{
+    margin-right: 33%;
+}
+
+.line { 
+    height: 3px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 20px 0px 0px;
+}
