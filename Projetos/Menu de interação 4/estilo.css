@@ -1,6 +1,84 @@
+@font-face {
+    font-family: Font;
+    src: url(mídias/lemon_milk/LEMONMILK-Light.otf);
+}
+@media (max-width:800px){
+    .otlado {
+        width: 350px;
+        background-color: rgb(10, 0, 10);
+        position: absolute;
+        top: 7vh;
+        height: 93vh;
+        left: 100%;
+        transition: 1s;
+    }
+    .line {
+        display: block !important;
+        height: 7vh;
+    }
+    li {
+        display: block !important;
+        width: 80px;
+        text-align: center;
+    }
+}
+@media (min-width:801px){
+    .otlado {
+        display: block;
+        position: relative;
+        transform: translate(0% , 0%) !important;
+    }
+    ul {
+        flex-direction: row !important;
+    }
+}
 * {
-    
+   margin: 0px;
+   padding: 0px; 
 }
 body {
     background-color: grey;
+    font: normal 0.8em Font;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+main {
+    background-image: url(mídias/colin-horn-fR9U2S31Exs-unsplash.jpg);
+    height: 93vh;
+    width: 100vw;
+    background-position: center center;
+    background-size: cover;
+}
+header {
+    height: 7vh;
+    background-color: rgb(10, 0, 10);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+li{
+    display: inline;
+    margin-right: 10px;
+    cursor: grab;
+    opacity: 20%;
+}
+ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    
+}
+.line {
+    border-radius: 50px;
+    width: 23px;
+    height: 3px;
+    background-color: white;
+    margin-top: 3px;
+    display: none;
 }
