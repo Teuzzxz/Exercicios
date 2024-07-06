@@ -20,6 +20,7 @@
         display: block !important;
         width: 80px;
         text-align: center;
+        opacity: 20%;
     }
 }
 @media (min-width:801px){
@@ -36,17 +37,13 @@
    margin: 0px;
    padding: 0px; 
 }
-body {
-    background-color: grey;
-    font: normal 0.8em Font;
+body { 
+    font: normal 0.8em Font; 
     overflow: hidden;
 }
-a {
-    text-decoration: none;
-    color: white;
-}
+
 main {
-    background-image: url(mídias/colin-horn-fR9U2S31Exs-unsplash.jpg);
+    background-image: url(mídias/Background.jpg);
     height: 93vh;
     width: 100vw;
     background-position: center center;
@@ -64,7 +61,6 @@ li{
     display: inline;
     margin-right: 10px;
     cursor: grab;
-    opacity: 20%;
 }
 ul {
     height: 100%;
@@ -73,7 +69,7 @@ ul {
     justify-content: space-around;
     align-items: end;
     
-}
+} 
 .line {
     border-radius: 50px;
     width: 23px;
@@ -81,4 +77,7 @@ ul {
     background-color: white;
     margin-top: 3px;
     display: none;
+}
+.sumir {
+    display: none !important;
 }
