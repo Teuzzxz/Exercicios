@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: grey;
+        }
+        .all {
+            border: 2px solid black;
+            color: white;
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+        }
+        p {
+            border: 2px solid black;
+        }
+        .pessoa {
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <h1>Diga seu nome</h1>
+        <input type="text" >
+        <input type="text" >
+        <input type="button" value="Enviar">
+        <p> </p>
+    </div>
+    <script>
+        const nome = document.getElementsByTagName('input')[0]
+        const idade = document.getElementsByTagName('input')[1]
+        const btn = document.getElementsByTagName('input')[2]
+        const pa = document.getElementsByTagName('p')[0]
+        let pessoas = []
+
+        class pessoa {
+            constructor(nome,idade) {
+                this.nome = nome
+                this.idade = idade
+            }
+            formatacao(){
+                return `O seu nome é ${this.nome} e voce tem ${this.idade} anos`
+            }
+        }
+
+
+
+        btn.addEventListener('click' , ()=>{
+            let p = new pessoa(nome.value, idade.value)
+            pessoas.push(p)
+
+            pa.innerHTML += `<div class='pessoa'>${p.formatacao()}</div> `
+
+            console.log(pessoas)
+
+        })
+    </script>
+</body>
+</html>
