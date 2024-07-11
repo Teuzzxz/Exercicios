@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: cadetblue;
+            font: normal 1em arial;
+        }
+        .all {
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+            width: 300px;
+            text-align: center;
+        }
+        .ocnao{
+            text-align: left;
+        }
+        .neyma {
+            width: 400px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <h1>Escolha seu carro</h1>
+        <p style="display: inline;">Tipo:</p>
+
+        <div>
+            <span class="ocnao">Hatch</span>
+            <input value="Hatch" type="radio" name="verificar" checked class="ata">
+        </div>
+
+        <div>
+            <span class="ocnao">Sedan</span>
+            <input value="Sedan" type="radio" name="verificar" class="ata">
+        </div>
+
+        <div>
+            <span class="ocnao">Compacto</span>
+            <input value="Compacto" type="radio" name="verificar" class="ata">
+        </div>
+
+        <br>
+
+        <span>Marca</span> <input class="inputs" type="text" name="" id="">
+        <br>
+        <span>Modelo</span> <input class="inputs" type="text" name="" id="">
+        <br>
+        <span>Cavalos</span> <input class="inputs" type="text" name="" id="">
+        <br>
+        <span>Toque</span> <input class="inputs" type="text" name="" id="">
+        <input type="button" value="Enviar">
+        
+    </div>
+        <div id="res"> </div>
+    <script>
+        const radios = [...document.getElementsByClassName('ata')]
+        const btn = document.getElementsByTagName('input')[7]
+        const ip = [...document.getElementsByClassName('inputs')]
+        const res = document.getElementById('res')
+        let tipo = 'Hatch'
+        radios.map((v,p,a)=>{
+            v.addEventListener('click' , ()=>{
+                tipo = v.value
+
+            })})
+        
+            class carro {
+                constructor(tipo, marca, modelo, cavalo, torque) {
+                    this.tipo = tipo
+                    this.marca = marca
+                    this.modelo = modelo
+                    this.cavalos = cavalo
+                    this.torque = torque
+                }
+                retorno(){
+                    return `tipo: ${this.tipo} <br> marca: ${this.marca} <br> modelo: ${this.modelo} <br> cavalos: ${this.cavalos} <br> torque: ${this.torque}`
+
+                }
+            }
+            
+            btn.addEventListener('click' , ()=>{
+                let car = new carro(tipo,ip[0].value, ip[1].value, ip[2].value, ip[3].value)
+                let novo = document.createElement('div.teste')
+                novo.innerHTML = car.retorno()
+                res.appendChild(novo)
+                console.log(novo)
+                console.log(car)
+                console.log(car.retorno())
+            })
+        
+        
+    </script>
+</body>
+</html>
