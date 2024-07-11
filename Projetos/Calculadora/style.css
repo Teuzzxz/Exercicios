@@ -1,46 +1,71 @@
-body {
-    background-color: rgb(82, 165, 140);
+@keyframes botaomechendo {
+    from {
+
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+@font-face {
+    font-family: Font;
+    src: url(absender/absender1.ttf);
 }
 * {
     margin: 0px;
+    padding: 0px;
 }
-h1 {
-    padding-top: 15px;
-    text-align: center;
+body {
+    background-color: black;
     color: white;
+    font: normal 1em Font;
 }
-#tudo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50% , -50%);
-    box-shadow: 0px 0px 15px  rgba(0, 0, 0, 0.377);
+#calculadora {
+    width: 350px;
     height: 500px;
-    max-width: 500px;
-    background-color: rgba(52, 132, 146, 0.637);
-}
-#botoes {
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    justify-content: center;
-    margin-top: 50px;
-    
+    flex-direction: column;
 }
-#text1 {
-
-}
-.numeros {
-    box-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.377);
-    width: 150px;
-    margin-right: 10px;
-} 
-#resultado {
-    
-    margin-top: 60px;
-    height: 60px;
+header {
+    height: 150px;
     width: 100%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-size: 3em;
     
 }
-#resultado > p {
-    text-align: center;
-    font: normal 2.5em arial;
+section {
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+}
+.colunas {
+    
+    flex: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.caixa {
+    flex: 25%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+span {
+    font-size: 3em;
+    background-color: grey;
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  
+}
+span:hover {
+    animation: botaomechendo 1s alternate infinite;
 }
