@@ -18,11 +18,14 @@
         .ocnao{
             text-align: left;
         }
-        .neyma {
-            width: 400px;
-            height: 100px;
+        #agoravaida{
+            border: 2px solid grey;
+            width: 200px;
+        }
+        #res {
+            display: flex;
             border: 1px solid black;
-            text-align: left;
+            height: 120px;
         }
     </style>
 </head>
@@ -60,6 +63,7 @@
     </div>
         <div id="res"> </div>
     <script>
+        let arra = []
         const radios = [...document.getElementsByClassName('ata')]
         const btn = document.getElementsByTagName('input')[7]
         const ip = [...document.getElementsByClassName('inputs')]
@@ -80,22 +84,41 @@
                     this.torque = torque
                 }
                 retorno(){
-                    return `tipo: ${this.tipo} <br> marca: ${this.marca} <br> modelo: ${this.modelo} <br> cavalos: ${this.cavalos} <br> torque: ${this.torque}`
+                    return `tipo: ${this.tipo} <br> marca: ${this.marca} <br> modelo: ${this.modelo} <br> cavalos: ${this.cavalos} <br> torque: ${this.torque} <br>`
 
                 }
             }
             
             btn.addEventListener('click' , ()=>{
-                let car = new carro(tipo,ip[0].value, ip[1].value, ip[2].value, ip[3].value)
-                let novo = document.createElement('div.teste')
-                novo.innerHTML = car.retorno()
+                let car = new carro(tipo, ip[0].value, ip[1].value, ip[2].value, ip[3].value)
+                let novo = document.createElement('div')
+                let remover = document.createElement('input')
+                arra.push(car.retorno())
+                remover.type = 'button'
+                remover.value = 'remover'
+                remover.addEventListener('click', () => {
+                    res.removeChild(novo)
+                })
+                novo.id = 'agoravaida'
+                novo.innerHTML = arra
+                novo.appendChild(remover)
                 res.appendChild(novo)
-                console.log(novo)
-                console.log(car)
-                console.log(car.retorno())
+                console.log(arra)
             })
-        
-        
-    </script>
+            
+            
+            // let car = new carro(tipo,ip[0].value, ip[1].value, ip[2].value, ip[3].value)
+            // let novo = document.createElement('div')
+            // let remover = document.createElement('input')
+            // remover.type = 'button'
+            // remover.value = 'remover'
+            // remover.addEventListener('click' , ()=>{
+            //     res.removeChild(novo)
+            // })
+            // novo.id = 'agoravaida'
+            // novo.innerHTML = car.retorno()
+            // novo.appendChild(remover)
+            // res.appendChild(novo)
+            </script>
 </body>
 </html>
