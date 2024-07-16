@@ -69,8 +69,11 @@ ButtonApagar.addEventListener('click', () => { // Botao de apagar
         for (let c = 0; c < Res.innerHTML.length - 1; c++){
             apagado+=Res.innerHTML[c]
         }
-        if (sinal == false) {
+        if (!sinal) {
             sinal=true
+        }
+        if (!ParenteseAberto) {
+            ParenteseAberto = true
         }
         Res.innerHTML=apagado
     }
