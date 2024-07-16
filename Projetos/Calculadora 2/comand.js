@@ -5,6 +5,7 @@ const ButtonApagar = document.getElementById('apagar')
 let Res = document.getElementsByTagName('p')[0] // Resultado
 let sinal = true
 let decimal = true
+let ParenteseAberto = false
 
 ButtonNumero.map((v,p) => {   // Adiciona evento de click a todos os numeros
     v.addEventListener('click', (evt) => {
@@ -21,11 +22,38 @@ ButtonNumero.map((v,p) => {   // Adiciona evento de click a todos os numeros
 
 ButtonOperações.map((v,p)=> { //Evento de clique as operações
     v.addEventListener('click', () => {
-        if (sinal && v.innerHTML!='C') {
-            Res.innerHTML += v.innerHTML
-            sinal = false
-        } else if (v.innerHTML == 'C') {
+        if (sinal && v.innerHTML!='C' && v.innerHTML!='()' ) {
+            if (Res.innerHTML == '0') {
+                if (v.innerHTML == '+' || v.innerHTML == '-') {
+                    Res.innerHTML = v.innerHTML
+                    sinal = false
+                }
+            } else {
+                Res.innerHTML += v.innerHTML
+                sinal = false
+            }
+        }
+        else if (v.innerHTML == 'C') { // Apagar tudo
             Res.innerHTML = '0'
+            sinal = true
+            ParenteseAberto = false
+        }
+//------------------Parêntese-------------------------------
+        if (v.innerHTML == '()') {
+            if (ParenteseAberto) {
+                Res.innerHTML +=')'
+                ParenteseAberto = false
+            }else if (Res.innerHTML == '0') {
+                Res.innerHTML = '('
+                ParenteseAberto = true
+            }else if (Res.innerHTML == '-' || Res.innerHTML== '+'){
+                Res.innerHTML += '('
+                ParenteseAberto = true
+            } else {
+                Res.innerHTML += '('
+                ParenteseAberto = true
+            }
+
         }
     })
 })
