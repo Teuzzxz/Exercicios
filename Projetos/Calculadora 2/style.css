@@ -81,6 +81,6 @@ nav {
 }
 
 .linha>img:hover {
-    animation: mouseporcima 1s ease alternate infinite;
+    animation: mouseporcima 2s ease alternate infinite;
     background-color: rgb(207, 207, 207);
 }
