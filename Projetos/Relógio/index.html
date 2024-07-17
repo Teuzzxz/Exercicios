@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: aquamarine;
+        }
+        .relo {
+            background-color: white;
+            border-radius: 20px;
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0px 0px 6px white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="relo">
+        <p>00:00:00</p>
+    </div>
+    
+    <script>
+        const paragrafo = document.getElementsByTagName('p')[0]
+        
+        
+        const relogio=()=>{
+            const data= new Date()
+            let horas = data.getHours() < 10 ? '0' + data.getHours() : data.getHours()
+            let minuto=data.getMinutes()<10?'0'+ data.getMinutes() : data.getMinutes()
+            let segundo = data.getSeconds() < 10 ? '0' + data.getSeconds() : data.getSeconds()
+            paragrafo.innerHTML=`${horas}:${minuto}:${segundo}`  
+        }
+        
+        const intervalo = setInterval(relogio,1000)
+
+    </script>
+</body>
+</html>
