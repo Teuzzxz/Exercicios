@@ -6,10 +6,11 @@
     <style>
         body {
             background-color: aquamarine;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        .relo {
+        .all {
             background-color: white;
-            border-radius: 20px;
+            border-radius: 20px 20px 0px 0px;
             width: 200px;
             height: 50px;
             position: absolute;
@@ -18,16 +19,67 @@
             transform: translate(-50%,-50%);
             box-shadow: 0px 0px 6px white;
             text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
+            border: 1px solid black;
+        }
+        .despertador {
+            border: 1px solid black;
+            background-color: white;
         }
     </style>
 </head>
 <body>
-    <div class="relo">
-        <p>00:00:00</p>
+    <div class="all">
+        <div class="relo">
+            <p>00:00:00</p>
+        </div>
+        <div class="despertador">
+            <p>Defina quando o alarme irá despertar(Em segundos)</p>
+            <input type="number" value="1">
+            <input type="button" value="ok">
+        </div>
     </div>
     
+    
     <script>
+        const audio = new Audio('alarme.mp3')
+
+        const inp1 = document.getElementsByTagName('input')[0]
+        const inp2 = document.getElementsByTagName('input')[1]
+        let alarme = ''
+        
+        const conferirSecunds=()=>{if(inp1.value>60){
+            alert('Só há 60 segundos por minuto')
+            inp1.value = 60
+        }}
+        setInterval(conferirSecunds,10000)
+        
+        inp2.addEventListener('click' , ()=>{
+            alarme=Number(inp1.value)
+            console.log(alarme)
+            conferir()
+        })
+        
+
+        const conferir=()=>{
+            const intervalo = setInterval(() => {
+                const data = new Date()
+                let segundo = data.getSeconds() < 10 ? '0' + data.getSeconds() : data.getSeconds()
+                if(segundo==alarme){
+                    alert('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+                    clearInterval(intervalo)
+                    alarme = ''
+                } else{
+                    console.log('deu nao')
+                }
+            }, 1000);   
+        }
+
+
+        //----------------------------------------------------
+        
+
+        
+        
         const paragrafo = document.getElementsByTagName('p')[0]
         
         
@@ -39,8 +91,9 @@
             paragrafo.innerHTML=`${horas}:${minuto}:${segundo}`  
         }
         
-        const intervalo = setInterval(relogio,1000)
+        setInterval(relogio,1000)
 
-    </script>
+
+        </script>
 </body>
 </html>
