@@ -22,7 +22,7 @@ header {
     cursor: default;
 }
 /* Animação */
-/* #p1::after{
+#Menu>div>p::after{
     content: "";
     display: none;
     width: 50px;
@@ -30,17 +30,12 @@ header {
     background-color: black;
 }
 #p2::after {
-    content: "";
-    display: none;
-    width: 68px;
-    height: 2px;
-    background-color: black;
+    width: 68px !important;
 }
 #p3::after {
-    content: "";
-    display:none;
-    width: 70px;
-    height: 2px;
-    background-color: black;
-} */
+    width: 70px !important;
+}
+#p3::after:hover{
+    display: block;
+}
 
