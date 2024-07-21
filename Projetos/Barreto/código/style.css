@@ -18,24 +18,16 @@ header {
     align-items: center;
 }
 #Menu>div{
-    margin-right: 20px;
+    margin-right: 40px;
     cursor: default;
 }
 /* Animação */
-#Menu>div>p::after{
-    content: "";
-    display: none;
-    width: 50px;
+.line{
+    position: absolute;
+    display: block;
     height: 2px;
+    width: 50px;
     background-color: black;
 }
-#p2::after {
-    width: 68px !important;
-}
-#p3::after {
-    width: 70px !important;
-}
-#p3::after:hover{
-    display: block;
-}
+
 
