@@ -26,8 +26,15 @@ header {
     position: absolute;
     display: block;
     height: 2px;
-    width: 50px;
     background-color: black;
+    transition: all 0.5s;
 }
-
-
+#p1{
+    width: 50px
+}
+#p2{
+    width: 65px
+}
+#p3{
+    width: 68px
+}
