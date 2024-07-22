@@ -1,3 +1,30 @@
+@media (max-width:800px){
+    .BotãoMenu {
+        display: block !important;
+    }
+    #Menu {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute;
+        top: 37px;
+        left: 100%;
+        height: calc(100vh - 37px);
+        width: 70vw;
+        background-color: burlywood;
+        transition: 1s;
+        opacity: 20%;
+    }
+    #Menu > div {
+        flex-grow: 1 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+    #Menu>div>div{
+        display: none !important
+    }
+}
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0px;
@@ -6,35 +33,40 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: grey;
+    height: 100vh;
+    overflow: hidden;
 }
 header {
     display: flex;
     justify-content: space-around;
     background-color: aqua;
+    align-items: center;
+}
+p {
+    font-weight: 600;
 }
 #Menu {
     display: flex;
     flex-direction: row;
     align-items: center;
+    opacity: 100% !important;
 }
 #Menu>div{
     margin-right: 40px;
     cursor: default;
 }
+.linha{
+    width: 23px;
+    height: 3px;
+    margin-top: 3px;
+    background: #000;
+    border-radius: 10px;
+}
+.BotãoMenu {
+    display: none;
+}
 /* Animação */
-.line{
-    position: absolute;
-    display: block;
-    height: 2px;
-    background-color: black;
+.ani{
     transition: all 0.5s;
 }
-#p1{
-    width: 50px
-}
-#p2{
-    width: 65px
-}
-#p3{
-    width: 68px
-}
+
