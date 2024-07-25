@@ -7,14 +7,18 @@ let menu_ele = document.getElementById("cobra") // provisorio
 let dificuldade = 1
 let inter = null
 let bola_p = null
+let comida = null
 // Classes-------------------------------------------------------------------------------------------------------
 class bola {
 	constructor() {
 		this.el = document.createElement("div")
-		this.velFrente = 5
+		this.com = document.createElement("div")
+		this.velFrente = 20
 		this.dificuldade = this.nivel()
 		this.posX = parseInt(Math.random() * 200)
 		this.posY = parseInt(Math.random() * 400)
+		this.CposX = parseInt(Math.random() * 400)
+		this.CposY = parseInt(Math.random() * 400)
 		this.divisivel()
 		this.dirX = 1
 		this.dirY = 1
@@ -23,34 +27,41 @@ class bola {
 		this.atraso = 1
 		this.desenhar()
 		this.movimentação()
+		this.comida()
 	}
 	nivel() {
 		switch (dificuldade) {
 			case 1:
-				return 50
+				return 140
 				break
 			case 2:
-				return 40
+				return 120
 				break
 			case 3:
-				return 30
+				return 100
 				break
 			case 4:
-				return 20
+				return 70
 				break
 			case 5:
-				return 10
+				return 40
 				break
 			default:
 				break
 		}
 	}
 	divisivel() {
-		while (!(this.posX % 5 == 0)) {
+		while (!(this.posX % 20 == 0)) {
 			this.posX++
 		}
-		while (!(this.posY % 5 == 0)) {
+		while (!(this.posY % 20 == 0)) {
 			this.posY++
+		}
+		while (!(this.CposY % 20 == 0)) {
+			this.CposY++
+		}
+		while (!(this.CposX % 20 == 0)) {
+			this.CposX++
 		}
 	}
 	desenhar() {
@@ -63,7 +74,7 @@ class bola {
 	movimentação() {
 		let intervalo = setInterval(() => {
 			this.direção()
-
+			this.comeu()
 			if (this.andarFrente) {
 				this.posX = this.posX + this.velFrente * this.dirX
 				this.el.style.left = this.posX + "px"
@@ -73,7 +84,6 @@ class bola {
 				this.el.style.top = this.posY + "px"
 			}
 		}, this.dificuldade + this.atraso)
-		console.log(this.dificuldade, this.atraso)
 		inter = intervalo
 	}
 	direção() {
@@ -94,12 +104,19 @@ class bola {
 			this.andarFrente = false
 		}
 	}
-}
-class cobras extends bola {
-	constructor(x, y) {
-		super()
-		this.posX = x
-		this.posY = y
+	comida() {
+		this.com.setAttribute(
+			"style",
+			`width:20px; height:20px; background-Color:black; position:absolute; top:${this.CposY}px;left:${this.CposX}px`
+		)
+		palco.appendChild(this.com)
+		comida = this.com
+	}
+	comeu() {
+		console.log(this.el.style.top, this.CposY)
+		if (this.posX == this.CposX && this.posY == this.CposY) {
+			console.log("comeu")
+		}
 	}
 }
 //funções-------------------------------------------------------------------------------------------------------
@@ -162,6 +179,7 @@ const btnVoltar = () => {
 	botao.addEventListener("click", () => {
 		clearInterval(inter)
 		bola_p.remove()
+		comida.remove()
 		document.body.appendChild(menu_ele)
 	})
 }
@@ -169,12 +187,8 @@ menu()
 btnComeçar.addEventListener("click", () => {
 	btnVoltar()
 	menu_ele.remove()
-
 	let bola_principal = new bola()
 	bola_p = bola_principal.el
-
-	let cobrinhas = new cobras(bola_principal.posX, bola_principal.posY)
-
 	window.addEventListener("keydown", (evt) => {
 		let k = evt.key
 		if (
@@ -188,7 +202,6 @@ btnComeçar.addEventListener("click", () => {
 			k == "ArrowUp"
 		) {
 			bola_principal.keypress = k
-			cobrinhas.keypress = k
 		}
 	})
 })
