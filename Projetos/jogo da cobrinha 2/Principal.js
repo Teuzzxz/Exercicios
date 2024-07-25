@@ -8,6 +8,7 @@ let dificuldade = 1
 let inter = null
 let bola_p = null
 let comida = null
+let score_el = null
 // Classes-------------------------------------------------------------------------------------------------------
 class bola {
 	constructor() {
@@ -28,6 +29,10 @@ class bola {
 		this.desenhar()
 		this.movimentação()
 		this.comida()
+		this.bolinhasComidas = [0, 0]
+		this.ultimaPosição = []
+		this.corpoCobra = []
+		this.criarCbra = true
 	}
 	nivel() {
 		switch (dificuldade) {
@@ -67,7 +72,7 @@ class bola {
 	desenhar() {
 		this.el.setAttribute(
 			"style",
-			`width: 20px;height: 20px;background-color: rgb(10, 238, 10) ;position:relative;left:${this.posX}px;top:${this.posY}px;border-radius:20px;`
+			`width: 18px;height: 18px;background-color: rgb(10, 238, 10) ;position:relative;left:${this.posX}px;top:${this.posY}px;border-radius:20px;border:2px solid black;`
 		)
 		palco.appendChild(this.el)
 	}
@@ -75,6 +80,8 @@ class bola {
 		let intervalo = setInterval(() => {
 			this.direção()
 			this.comeu()
+			this.colisão()
+			this.restoCobra()
 			if (this.andarFrente) {
 				this.posX = this.posX + this.velFrente * this.dirX
 				this.el.style.left = this.posX + "px"
@@ -85,6 +92,18 @@ class bola {
 			}
 		}, this.dificuldade + this.atraso)
 		inter = intervalo
+	}
+	colisão() {
+		if (
+			this.posX == 500 ||
+			this.posX == -20 ||
+			(this.posY == 500) | (this.posY == -20)
+		) {
+			clearInterval(inter)
+			bola_p.remove()
+			comida.remove()
+			document.body.appendChild(menu_ele)
+		}
 	}
 	direção() {
 		if (this.keypress == "d" || this.keypress == "ArrowRight") {
@@ -113,9 +132,53 @@ class bola {
 		comida = this.com
 	}
 	comeu() {
-		console.log(this.el.style.top, this.CposY)
 		if (this.posX == this.CposX && this.posY == this.CposY) {
-			console.log("comeu")
+			this.bolinhasComidas[0] += 1
+			this.CposX = parseInt(Math.random() * 400)
+			this.CposY = parseInt(Math.random() * 400)
+			while (!(this.CposX % 20 == 0)) {
+				this.CposX++
+			}
+			while (!(this.CposY % 20 == 0)) {
+				this.CposY++
+			}
+			this.com.setAttribute(
+				"style",
+				`width:20px; height:20px; background-Color:black; position:absolute; top:${this.CposY}px;left:${this.CposX}px`
+			)
+		}
+	}
+	restoCobra() {
+		let obj = {
+			posX: this.posX,
+			posY: this.posY,
+		}
+		this.ultimaPosição.push(obj)
+
+		if (this.bolinhasComidas[0] > this.bolinhasComidas[1]) {
+			this.bolinhasComidas[1]++
+			let nagia = document.createElement("div")
+			nagia.setAttribute(
+				"style",
+				`width:20px; height:20px; background-color: rgb(10, 238, 10) ;position:absolute; top:${
+					this.ultimaPosição[this.ultimaPosição.length - 2].posY
+				}px;left:${
+					this.ultimaPosição[this.ultimaPosição.length - 2].posX
+				}px;border-radius:50%;`
+			)
+			palco.appendChild(nagia)
+			this.corpoCobra.push(nagia)
+			score_el = this.corpoCobra.length
+		}
+		if (this.corpoCobra.length > 0) {
+			this.corpoCobra.map((v, p) => {
+				v.style.top = `${
+					this.ultimaPosição[this.ultimaPosição.length - (1 + p)].posY
+				}px`
+				v.style.left = `${
+					this.ultimaPosição[this.ultimaPosição.length - (1 + p)].posX
+				}px`
+			})
 		}
 	}
 }
@@ -183,10 +246,28 @@ const btnVoltar = () => {
 		document.body.appendChild(menu_ele)
 	})
 }
+const score = (sc, scM) => {
+	let div = document.createElement("div")
+	div.setAttribute("style", `position:absolute; top:-50px;`)
+
+	let score = document.createElement("p")
+	score.innerHTML = "Score: " + sc
+
+	let scoreMAX = document.createElement("p")
+	scoreMAX.innerHTML = scM
+
+	score_el = div
+
+	div.appendChild(score)
+	div.appendChild(scoreMAX)
+	palco.appendChild(div)
+}
 menu()
 btnComeçar.addEventListener("click", () => {
-	btnVoltar()
 	menu_ele.remove()
+	btnVoltar()
+
+	score(1, 0)
 	let bola_principal = new bola()
 	bola_p = bola_principal.el
 	window.addEventListener("keydown", (evt) => {
