@@ -16,19 +16,26 @@
 	</head>
 	<body>
 		<canvas id="canvas1"></canvas>
+
 		<script>
 			const ctx = document.getElementById("canvas1")
-
+			let v = {
+				val1: parseInt(Math.random() * 30),
+				val2: parseInt(Math.random() * 30),
+				val3: parseInt(Math.random() * 30),
+				val4: parseInt(Math.random() * 30),
+				val5: parseInt(Math.random() * 30),
+			}
 			new Chart(ctx, {
-				type: "line",
+				type: "bar",
 				data: {
-					labels: ["Dinheiro ganho", "Dinheiro gasto", "Total"],
+					labels: ["Ale1", "Ale2", "Ale3", "Ale4", "Ale5"],
 					datasets: [
 						{
-							label: "Money por mês",
-							data: [9, 11, 2],
-							backgroundColor: "rgba(255,0,255,0.2)",
+							label: "Gráfico aleatório",
+							data: [v.val1, v.val2, v.val3, v.val4, v.val5],
 							borderWidth: 1,
+							backgroundColor: "rgb(0,0,0)",
 						},
 					],
 				},
