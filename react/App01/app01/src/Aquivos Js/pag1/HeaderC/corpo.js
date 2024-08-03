@@ -1,13 +1,8 @@
-export default function corpo() {
+export default function corpo(passado) {
 	return (
 		<>
 			<main>
-				<div>
-					<h1>Ola</h1>
-				</div>
-				<div>
-					<h1>bem vindo</h1>
-				</div>
+				<p>val: {passado.nome()}</p>
 			</main>
 		</>
 	)
