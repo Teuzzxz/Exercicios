@@ -1,11 +1,6 @@
-import "./Style.css"
+import "./Css/index/ets.css"
+import euNovo from "./componentes/imgs/euNovo.png"
 
 export default function App() {
-	return (
-		<>
-			<main>
-				<p>teuz code testando</p>
-			</main>
-		</>
-	)
+	return <img src={euNovo}></img>
 }
