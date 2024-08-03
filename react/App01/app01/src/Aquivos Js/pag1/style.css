@@ -6,3 +6,9 @@ body {
 	background-color: black;
 	color: white;
 }
+.line {
+	width: 23px;
+	height: 3px;
+	background-color: white;
+	margin-top: 3px;
+}
