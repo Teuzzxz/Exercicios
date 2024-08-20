@@ -6,6 +6,8 @@ export default function App() {
 	return (
 		<>
 			<Titulo />
+			<teste nome="teuz" />
+			<h1></h1>
 		</>
 	)
 }

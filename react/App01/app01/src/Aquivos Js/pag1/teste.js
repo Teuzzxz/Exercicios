@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function Nome() {
+export default function Nome(props) {
 	const [input, setInput] = useState("teuzin")
 
 	return (
@@ -12,6 +12,7 @@ export default function Nome() {
 				}}
 			></input>
 			<h1>{input}</h1>
+			<h2></h2>
 		</>
 	)
 }
