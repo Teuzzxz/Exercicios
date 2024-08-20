@@ -1,6 +1,6 @@
 import React from "react"
 import "../pag1/style.css"
-import Titulo from "../pag1/HeaderC/teste"
+import Titulo from "../pag1/teste"
 
 export default function App() {
 	return (

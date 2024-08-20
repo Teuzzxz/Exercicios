@@ -6,6 +6,12 @@ body {
 	background-color: black;
 	color: white;
 	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	font: normal 1em arial;
 }
 .line {
 	width: 23px;
