@@ -1,18 +1,37 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 export default function Nome(props) {
-	const [input, setInput] = useState("teuzin")
-
+	const [name, setname] = useState("a")
+	const mudar = (val) => {
+		setname(val)
+	}
+	useEffect(() => {
+		console.log("ouve mudança")
+	}, [name])
 	return (
 		<>
-			<input
-				onChange={(evt) => {
-					console.log(evt.target.value)
-					setInput(evt.target.value)
+			<h1>{name}</h1>
+			<button
+				onClick={() => {
+					mudar("primeiro")
 				}}
-			></input>
-			<h1>{input}</h1>
-			<h2></h2>
+			>
+				primeiro
+			</button>
+			<button
+				onClick={() => {
+					mudar("segundo")
+				}}
+			>
+				segundo
+			</button>
+			<button
+				onClick={() => {
+					mudar("terceiro")
+				}}
+			>
+				terceiro
+			</button>
 		</>
 	)
 }
