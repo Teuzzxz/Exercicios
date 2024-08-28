@@ -1,37 +1,16 @@
 import React, { useState, useEffect } from "react"
 
 export default function Nome(props) {
-	const [name, setname] = useState("a")
-	const mudar = (val) => {
-		setname(val)
+	const [num, setnum] = useState(0)
+	const add = () => {
+		setnum(num + 1)
 	}
-	useEffect(() => {
-		console.log("ouve mudança")
-	}, [name])
+
 	return (
 		<>
-			<h1>{name}</h1>
-			<button
-				onClick={() => {
-					mudar("primeiro")
-				}}
-			>
-				primeiro
-			</button>
-			<button
-				onClick={() => {
-					mudar("segundo")
-				}}
-			>
-				segundo
-			</button>
-			<button
-				onClick={() => {
-					mudar("terceiro")
-				}}
-			>
-				terceiro
-			</button>
+			<button onClick={add}>click for add</button>
+			<p>{num}</p>
+			{num > 10 && num < 15 && <p>toma ta lerda</p>}
 		</>
 	)
 }
