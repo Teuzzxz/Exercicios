@@ -22,21 +22,32 @@ export default function Paglogin() {
 			<div className="Login">
 				<form>
 					<h1>Cadastro de usuários</h1>
-					<input name="nome" type="text"></input>
-					<input name="idade" type="number"></input>
-					<input name="email" type="email"></input>
+					<input name="nome" type="text" placeholder="nome"></input>
+					<input name="idade" type="number" placeholder="idade"></input>
+					<input name="email" type="email" placeholder="email"></input>
 					<button>Cadastrar</button>
 				</form>
 				{users.map((e, p) => {
 					return (
-						<div style={{ display: "flex", backgroundColor: "grey", justifyContent: "space-between", alignItems: "center" }}>
+						<div className="card" key={p}>
 							<div>
-								<p>Nome: {users[p].name}</p>
-								<p>Idade: {users[p].age}</p>
-								<p>Email: {users[p].email}</p>
+								<p>
+									Nome: <span>{e.name}</span>
+								</p>
+								<p>
+									Idade: <span>{e.age}</span>
+								</p>
+								<p>
+									Email: <span>{e.email}</span>
+								</p>
 							</div>
 							<a src="#">
-								<img src={Lixeira} />
+								<img
+									src={Lixeira}
+									onClick={(evt) => {
+										evt.target.parentNode.parentNode.remove()
+									}}
+								/>
 							</a>
 						</div>
 					)
