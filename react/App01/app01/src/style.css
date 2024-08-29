@@ -1,0 +1,40 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-image: linear-gradient(to bottom, purple, rgba(0, 0, 0, 0.566));
+	color: white;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	font: normal 1em arial;
+}
+.Login {
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+input,
+button {
+	display: block;
+	height: 30px;
+	width: 80%;
+	border-radius: 20px;
+	background-color: rgba(101, 101, 101, 0.504);
+	border: none;
+}
+.Login * {
+	margin: 10px;
+}
+button {
+	background-color: purple;
+	font: normal 1.5em Verdana;
+}
