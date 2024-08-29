@@ -13,7 +13,8 @@ body {
 	height: 100vh;
 	font: normal 1em arial;
 }
-.Login {
+
+form {
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 10px;
 	border-radius: 10px;
@@ -36,5 +37,5 @@ button {
 }
 button {
 	background-color: purple;
-	font: normal 1.5em Verdana;
+	font: bold 1em Verdana;
 }
