@@ -1,11 +1,11 @@
 import React from "react"
 import "./style.css"
-import Login from "./Componentes/login"
+import Teste from "./Componentes/testes.js"
 
 export default function App() {
 	return (
 		<>
-			<Login />
+			<Teste />
 		</>
 	)
 }
