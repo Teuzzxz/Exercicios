@@ -1,11 +1,11 @@
 import React from "react"
 import "./style.css"
-import Efeito from "./Componentes/useefect"
+import Class from "./Componentes/CdC"
 
 export default function App() {
 	return (
 		<>
-			<Efeito />
+			<Class nome="teuzin matador" />
 		</>
 	)
 }
