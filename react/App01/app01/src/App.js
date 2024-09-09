@@ -1,14 +1,11 @@
 import React from "react"
 import "./style.css"
-import Teste from "./Componentes/notas.js"
-import Props from "./Componentes/propsChildren.js"
+import Efeito from "./Componentes/useefect"
 
 export default function App() {
 	return (
 		<>
-			<Props>
-				<p>Filhote</p>
-			</Props>
+			<Efeito />
 		</>
 	)
 }
