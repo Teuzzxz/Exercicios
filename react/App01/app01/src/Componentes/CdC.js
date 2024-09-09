@@ -8,7 +8,7 @@ export default class Classe extends React.Component {
 		}
 	}
 	adi() {
-		this.setState({ numero: this.num.numero + 1 })
+		this.setState({ numero: " 231" })
 		console.log(this.num.numero)
 	}
 	render() {
