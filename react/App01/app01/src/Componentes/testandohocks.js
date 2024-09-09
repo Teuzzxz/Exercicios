@@ -8,17 +8,7 @@ export default function Teste() {
 	}, [val])
 	return (
 		<>
-			<input
-				value={val}
-				onChange={(evt) => {
-					setval(evt.target.value)
-				}}
-			></input>
-			<br />
-			<br />
-			<br />
-			<p>Texto digitado: {val}</p>
-			<p>Mudanças: {mud}</p>
+			<input></input>
 		</>
 	)
 }
