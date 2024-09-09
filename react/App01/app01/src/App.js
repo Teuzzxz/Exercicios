@@ -1,11 +1,11 @@
 import React from "react"
 import "./style.css"
-import Class from "./Componentes/CdC"
+import Hocks from "./Componentes/testandohocks"
 
 export default function App() {
 	return (
 		<>
-			<Class nome="teuzin matador" />
+			<Hocks />
 		</>
 	)
 }
