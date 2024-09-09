@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			* {
+				margin: 20px;
+				padding: 0px;
+			}
+			body {
+				background-color: black;
+				display: flex;
+				height: 100vh;
+				justify-content: center;
+				align-items: center;
+				color: white;
+				flex-direction: column;
+				overflow: hidden;
+			}
+			button {
+				width: 80px;
+				height: 40px;
+				border: none;
+				background-color: rgb(50, 171, 205);
+			}
+		</style>
+	</head>
+	<body>
+		<p>vamo casar e ter 2 mlk e 1 cachorro?</p>
+
+		<button>Sim</button>
+		<button>Nao</button>
+		<script>
+			let sim = document.getElementsByTagName("button")[0]
+			let nao = document.getElementsByTagName("button")[1]
+			sim.addEventListener("click", () => alert("ebaaa, brigado amor"))
+			nao.addEventListener("click", (evt) => {
+				nao.style.position = "absolute"
+				nao.style.top = `${Math.random() * (window.innerHeight - 100)}px`
+				nao.style.left = `${Math.random() * (window.innerWidth - 100)}px`
+			})
+		</script>
+	</body>
+</html>
