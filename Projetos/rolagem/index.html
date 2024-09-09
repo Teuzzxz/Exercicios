@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+			body {
+				background-color: grey;
+				font: normal 1em arial;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			img {
+				width: 20px;
+				height: 20px;
+			}
+			.all {
+				display: flex;
+				align-items: center;
+			}
+			.rolagem {
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				display: flex;
+				flex-direction: row;
+				overflow: hidden;
+			}
+			.caixas {
+				min-width: 300px;
+				height: 300px;
+				transition: 2s;
+			}
+			.azul {
+				background-color: blue;
+			}
+			.verde {
+				background-color: green;
+			}
+			.vermelho {
+				background-color: red;
+			}
+			.rosa {
+				background-color: pink;
+			}
+			.ciano {
+				background-color: cadetblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<img src="assets/seta-esqueda.png" alt="" />
+			<div style="display: flex; align-items: center; flex-direction: column">
+				<div class="rolagem">
+					<div class="caixas azul" style="transform: translateX(0px)"></div>
+					<div class="caixas verde" style="transform: translateX(0px)"></div>
+					<div class="caixas vermelho" style="transform: translateX(0px)"></div>
+					<div class="caixas rosa" style="transform: translateX(0px)"></div>
+					<div class="caixas ciano" style="transform: translateX(0px)"></div>
+				</div>
+				<div class="radios">
+					<input type="radio" name="mesmo" checked />
+					<input type="radio" name="mesmo" />
+					<input type="radio" name="mesmo" />
+					<input type="radio" name="mesmo" />
+					<input type="radio" name="mesmo" />
+				</div>
+			</div>
+			<img src="assets/seta-direita.png" alt="" />
+		</div>
+		<script>
+			let caixas = [...document.getElementsByClassName("caixas")]
+			let imagens = [...document.getElementsByTagName("img")]
+			let radios = [...document.getElementsByName("mesmo")]
+			radios.map((v, p) => {
+				v.addEventListener("click", () => {
+					caixas.map((v) => {
+						v.style.transform = `translateX(${-300 * p}px)`
+						console.log(300 * p)
+					})
+				})
+			})
+			imagens.map((v) => {
+				v.addEventListener("click", () => {
+					if (v == imagens[1]) {
+						caixas.map((v) => {
+							if (v.style.transform.match(/[-+]?\d+/g) != -1200) {
+								let num = v.style.transform.match(/[-+]?\d+/g)
+								v.style.transform = `translateX(${num - 300}px)`
+								console.log(
+									radios.map((v) => {
+										return v.checked
+									})
+								)
+							}
+						})
+					} else {
+						caixas.map((v) => {
+							if (v.style.transform.match(/[-+]?\d+/g) != 0) {
+								let num = v.style.transform.match(/[-+]?\d+/g)
+								v.style.transform = `translateX(${Number(num) + 300}px)`
+							}
+						})
+					}
+				})
+			})
+		</script>
+	</body>
+</html>
