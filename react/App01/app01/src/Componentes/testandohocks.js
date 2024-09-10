@@ -1,14 +1,19 @@
-import React, { useState, useEffect } from "react"
-export default function Teste() {
-	const [val, setval] = useState("")
-	const [mud, setmud] = useState(0)
+import React, { useState, useEffect, useMemo } from "react"
 
-	useEffect(() => {
-		setmud(mud + 1)
-	}, [val])
+export default function Teste() {
+	let [num, setnum] = useState(0)
+	let ata = useMemo(() => {
+		console.log("ai neymar")
+	}, [num])
+
+	const [text, setText] = useState("")
+
 	return (
 		<>
-			<input></input>
+			<input value={text} onChange={(e) => setText(e.target.value)}></input>
+			<p>{text}</p>
+			<button onClick={() => setnum(num + 1)}>clica bb clica</button>
+			<p>{num}</p>
 		</>
 	)
 }
