@@ -15,3 +15,17 @@ body {
 span {
 	font-weight: bold;
 }
+table {
+	border-collapse: collapse;
+}
+
+td {
+	border: 1px solid black;
+	width: 10vw;
+}
+.bold {
+	font-weight: bold;
+}
+input {
+	margin: 20px;
+}
