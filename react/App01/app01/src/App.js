@@ -1,11 +1,13 @@
 import React from "react"
 import "./style.css"
-import Render from "./Componentes/renderCondicional"
+import Pag1 from "./Componentes/pag1"
+import Pag2 from "./Componentes/pag2"
 
 export default function App() {
 	return (
 		<>
-			<Render />
+			<button>Pag1</button>
+			<button>Pag2</button>
 		</>
 	)
 }
