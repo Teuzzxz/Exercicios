@@ -1,11 +1,11 @@
 import React from "react"
 import "./style.css"
-import Rolagem from "./Componentes/Rolagem"
+import Render from "./Componentes/renderCondicional"
 
 export default function App() {
 	return (
 		<>
-			<Rolagem />
+			<Render />
 		</>
 	)
 }
