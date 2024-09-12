@@ -15,30 +15,32 @@ export default function Carros() {
 
 	const [text, setText] = useState("")
 
-	useEffect(() => {}, [text])
+	useEffect(() => {
+		render()
+	}, [text])
 
 	const render = () => {
-		carros.map((v) => {
-			if (text == v.tipo) {
+		return carros.map((v, p) => {
+			if (text == v.Preço || text == v.tipo || text == v.modelo) {
 				return (
-					<tr>
+					<tr key={p}>
 						<td>{v.tipo}</td>
-						<td>{v.modelo}</td>
 						<td>{v.Preço}</td>
+						<td>{v.modelo}</td>
 					</tr>
 				)
-			} else {
-				console.log("chegou")
+			} else if (text != "sport" && text != "SUV" && text != "Empresa") {
 				return (
-					<tr>
+					<tr key={p}>
 						<td>{v.tipo}</td>
-						<td>{v.modelo}</td>
 						<td>{v.Preço}</td>
+						<td>{v.modelo}</td>
 					</tr>
 				)
 			}
 		})
 	}
+
 	return (
 		<>
 			<h1>Digite a categoria</h1>
