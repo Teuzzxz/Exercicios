@@ -15,10 +15,6 @@ export default function Carros() {
 
 	const [text, setText] = useState("")
 
-	useEffect(() => {
-		render()
-	}, [text])
-
 	const render = () => {
 		return carros.map((v, p) => {
 			if (text == v.Preço || text == v.tipo || text == v.modelo) {
