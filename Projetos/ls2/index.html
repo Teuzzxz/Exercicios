@@ -4,134 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ls2 capacetes - Promoção</title>
-		<style>
-			@media (min-width: 740px) {
-				header {
-					height: 200px !important;
-					& .ls2-logo {
-						height: 150px !important;
-					}
-				}
-				nav {
-					margin-top: 200px !important;
-				}
-			}
-			@font-face {
-				font-family: font;
-				src: url(assets/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2);
-			}
-			* {
-				margin: 0px;
-				padding: 0px;
-			}
-			body {
-				font: normal 1em font;
-				overflow-x: hidden;
-				background-color: grey;
-			}
-			header {
-				position: fixed;
-				top: 0px;
-				display: flex;
-				width: 100vw;
-				justify-content: space-around;
-				align-items: center;
-				height: 100px;
-				box-shadow: 0px 0px 3px grey;
-				background-color: white;
-				& .ls2-logo {
-					height: 64px;
-				}
-				& .img-menor {
-					width: 22px;
-				}
-			}
-			nav {
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				align-items: center;
-				margin-top: 100px;
-				background-color: white;
-				& h1 {
-					font: bolder 2.3em font;
-					margin: 30px 0px;
-					line-height: 1.25 !important;
-				}
-				& video {
-					width: 100%;
-					height: 500px;
-					display: inline-block;
-				}
-				& .d-video {
-					width: 80vw;
-				}
-				& p {
-					margin: 0px 25px 15px 25px;
-					font-size: 1.5em;
-					line-height: 1.25 !important;
-					text-align: justify;
-				}
-				& button {
-					display: block;
-					margin-top: 30px;
-					width: 250px;
-					height: 50px;
-					border-radius: 10px;
-					font: bold 1.3em arial;
-					border: none;
-					background-color: red;
-					color: white;
-				}
-			}
-			section {
-				margin-top: 30px;
-				background-color: rgba(244, 244, 244, 1);
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				text-align: center;
-				& h1 {
-					font: bold 2.3em font;
-					padding: 15px;
-					width: 100vw;
-					box-shadow: 0px 0px 50px white;
-				}
-				& img {
-					height: 40px;
-					display: inline-block;
-				}
-			}
-			.avaliação {
-				width: 90vw;
-				max-width: 800px;
-				background-color: white;
-				box-shadow: 0px 50px 20px rgba(128, 128, 128, 0.535);
-				height: 500px;
-				& .stars {
-					font: bold 4em arial;
-					display: flex;
-					align-items: center;
-					& span {
-						margin: 15px;
-					}
-				}
-			}
-			.tudo {
-				display: flex;
-				justify-content: space-evenly;
-				overflow-x: auto;
-				unicode-bidi: isolate;
-				& button {
-					max-height: 63px;
-					padding: 15px;
-					font: bold 1.3em font;
-					background-color: rgb(231, 231, 231);
-					border: none;
-					margin: 10px;
-				}
-			}
-		</style>
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header>
@@ -145,11 +18,12 @@
 		<nav>
 			<h1>Últimos brindes para avaliadores disponíveis!</h1>
 			<p>Assista ao vídeo abaixo, participe do nosso questionário e receba um brinde exclusivo para avaliadores da nossa marca!</p>
-			<div class="d-video"><video src="assets/ls2.mp4" controls autoplay></video></div>
+			<div class="d-video"><video src="assets/ls2.mp4" autoplay></video></div>
 			<button>PARTICIPAR AGORA</button>
 		</nav>
 		<section>
 			<h1>Avaliações</h1>
+
 			<div class="avaliação">
 				<div class="stars">
 					<span>4.9</span>
@@ -159,12 +33,67 @@
 					<img src="assets/favorite.png" />
 					<img src="assets/rating.png" />
 				</div>
+
 				<div class="tudo">
 					<button style="background-color: red">Tudo(7,6mil)</button>
 					<button style="min-width: 233px">Com Mídia(3,17mil)</button>
 					<button style="min-width: 116px">Estrela ↓</button>
 					<button style="min-width: 128px">Varição ↓</button>
 				</div>
+
+				<div class="Avaliações-pessoas">
+					<h1>Gustavo Martins <span>Útil(46)</span></h1>
+					<div>
+						<img src="assets/favorite.png" style="margin-left: 20px" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+					</div>
+					<p style="margin-left: 20px">Recebi meu capacete com apenas 2 dias,não estava acreditando até chegar na minha casa😍</p>
+					<img src="assets/5DV665WblTVq.webp" style="margin-left: 20px" class="capacete" />
+				</div>
+
+				<div class="Avaliações-pessoas">
+					<h1>Eduardo Santos <span>Útil(3)</span></h1>
+					<div>
+						<img src="assets/favorite.png" style="margin-left: 20px" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+					</div>
+					<p style="margin-left: 20px">São simplismente maravilhosos os capacetes, exonomizei um dinheirão kkk.</p>
+					<img src="assets/BlSdjN2eGeDH.webp" style="margin-left: 20px" class="capacete" />
+				</div>
+
+				<div class="Avaliações-pessoas">
+					<h1>Rodrigo Monteiro <span>Útil(13)</span></h1>
+					<div>
+						<img src="assets/favorite.png" style="margin-left: 20px" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+					</div>
+					<p style="margin-left: 20px">Chegou rápido e bem embalado, o meu ja estava velho, e com essa promoção consegui esse novinho😍</p>
+					<img src="assets/tvJ5pB10taru.webp" style="margin-left: 20px" class="capacete" />
+				</div>
+
+				<div class="Avaliações-pessoas">
+					<h1>Jader Campos <span>Útil(21)</span></h1>
+					<div>
+						<img src="assets/favorite.png" style="margin-left: 20px" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+						<img src="assets/favorite.png" class="estrelas" />
+					</div>
+					<p style="margin-left: 20px">Muito booom, atrasou 4 dias mas chegou, Ls2 me mandou de graçaaaa, agradeço muito por isso Ls2❤️</p>
+					<img src="assets/BV44T5UQTAWi.webp" style="margin-left: 20px" class="capacete" />
+				</div>
+
+				<p class="mais-avaliações">+7.632 avaliações</p>
 			</div>
 		</section>
 	</body>

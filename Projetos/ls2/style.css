@@ -1,0 +1,162 @@
+@media (min-width: 740px) {
+	header {
+		height: 200px !important;
+		& .ls2-logo {
+			height: 150px !important;
+		}
+	}
+	nav {
+		margin-top: 200px !important;
+	}
+}
+@font-face {
+	font-family: font;
+	src: url(assets/poppins_n4.934accbf9f5987aa89334210e6c1e9151f37d3b6.woff2);
+}
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	font: normal 1em font;
+	overflow-x: hidden;
+	background-color: rgba(213, 212, 212, 0.535);
+}
+header {
+	position: fixed;
+	top: 0px;
+	display: flex;
+	width: 100vw;
+	justify-content: space-around;
+	align-items: center;
+	height: 100px;
+	box-shadow: 0px 0px 3px grey;
+	background-color: white;
+	& .ls2-logo {
+		height: 64px;
+	}
+	& .img-menor {
+		width: 22px;
+	}
+}
+nav {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	margin-top: 100px;
+	background-color: white;
+	& h1 {
+		font: bolder 2.3em font;
+		margin: 30px 0px;
+		line-height: 1.25 !important;
+	}
+	& video {
+		width: 100%;
+		height: 500px;
+		display: inline-block;
+	}
+	& .d-video {
+		width: 80vw;
+	}
+	& p {
+		margin: 0px 25px 15px 25px;
+		font-size: 1.5em;
+		line-height: 1.25 !important;
+		text-align: justify;
+	}
+	& button {
+		display: block;
+		margin-top: 30px;
+		width: 250px;
+		height: 50px;
+		border-radius: 10px;
+		font: bold 1.3em arial;
+		border: none;
+		background-color: red;
+		color: white;
+	}
+}
+section {
+	margin: 30px auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	width: 95vw;
+	max-width: 1000px;
+	border-radius: 10px;
+	& h1 {
+		font: bold 2.3em font;
+		padding: 15px;
+	}
+	& img {
+		height: 40px;
+		display: inline-block;
+	}
+}
+.avaliação {
+	width: 90vw;
+	max-width: 1000px;
+	background-color: white;
+	box-shadow: 0px 50px 20px rgba(128, 128, 128, 0.535);
+
+	& .stars {
+		font: bold 4em arial;
+		display: flex;
+		align-items: center;
+		& span {
+			margin: 15px;
+		}
+	}
+}
+.tudo {
+	display: flex;
+	justify-content: space-evenly;
+	overflow-x: auto;
+	unicode-bidi: isolate;
+	& button {
+		max-height: 63px;
+		padding: 15px;
+		font: bold 1.3em font;
+		background-color: rgb(231, 231, 231);
+		border: none;
+		margin: 10px;
+	}
+}
+.Avaliações-pessoas {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	font: normal 0.6em font;
+	align-items: start;
+	text-align: start;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.535);
+	& span {
+		color: grey;
+		font-weight: 100;
+	}
+
+	& .estrelas {
+		width: 20px;
+		height: 20px;
+	}
+
+	& p {
+		margin: 15px 0px;
+		font-size: 2em;
+	}
+	& .capacete {
+		width: 150px;
+		height: 200px;
+		margin-bottom: 15px;
+	}
+}
+.mais-avaliações {
+	padding: 10px;
+	text-align: start;
+	font: bold 1.5em font;
+	color: rgba(128, 128, 128, 0.535);
+	cursor: grab;
+}
